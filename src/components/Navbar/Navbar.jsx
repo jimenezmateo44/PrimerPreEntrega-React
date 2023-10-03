@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className='font-mono lg:bg-[#F8EFE0] flex items-center justify-around shadow-md w-full h-20 fixed top-0 left-0 min-[320px]:flex-wrap'>
        <div className='max-sm:block flex flex-shrink-0 min-[320px]:flex-shrink-1'>
             <h1 className='font-sans font-bold text-2xl ml-10'>UNVEIL</h1>
-           <h3 className='flex items-center ml-3'>| for S neakerheads</h3>
+           <h3 className='flex items-center ml-3'>| for Sneakerheads</h3>
        </div>
        <div className="flex items-center gap-2">
         <input
