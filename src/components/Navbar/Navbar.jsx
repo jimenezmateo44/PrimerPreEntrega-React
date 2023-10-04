@@ -6,7 +6,7 @@ import logo from '../../assets/unveil.png'
 
 const Navbar = () => {
   return (
-    <div className='font-mono lg:bg-[#F8EFE0] flex items-center justify-around shadow-md w-full h-20 fixed top-0 left-0 min-[320px]:flex-wrap'>
+    <div className='font-mono lg:bg-[#F8EFE0] flex items-center justify-around w-full h-20 fixed top-0 left-0 min-[320px]:flex-wrap'>
        <div className='max-sm:block flex flex-shrink-0 min-[320px]:flex-shrink-1'>
            <img src={logo} alt='logo' className='h-8'/>
        </div>
