@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import ProductCard from '../ProductCard/ProductCard.jsx';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   return (
-    <div className='h-screen flex justify-center items-center text-lg italic font-bold'>
-    <h1 className='font-mono'>{props.greeting}</h1>
+    <div >
+      <h1 className='flex items-center justify-center mt-5 text-[2rem] text-bold font-mono'>OUR PRODUCTS</h1>
+      <ProductCard />
   </div>
   )
 }
