@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductDetail = ({id, nombre, marca, precio, imagen, stock}) => {
   return (
-    <container className="flex items-center justify-evenly mt-[150px]">
+    <container className="flex items-center justify-evenly m-[20vh]">
       <div>
        <Link to='/'>
        <button className="mb-5 bg-[#fafafa] border border-[#1f1f1f] font-bold py-2 px-4 rounded-full">Volver</button>
