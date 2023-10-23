@@ -3,12 +3,13 @@ import SearchSVG from '../SVGIcons/SearchSVG'
 import CartWidget from '../SVGIcons/CartWidget'
 import SignInSVG from '../SVGIcons/SignInSVG'
 import logo from '../../assets/unveil.png'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div className='font-mono lg:bg-[#F8EFE0] flex items-center justify-around w-full h-20 fixed top-0 left-0 min-[320px]:flex-wrap'>
        <div className='max-sm:block flex flex-shrink-0 min-[320px]:flex-shrink-1 cursor-pointer'>
-           <img src={logo} alt='logo' className='h-8'/>
+           <Link to='/'><img src={logo} alt='logo' className='h-8'/></Link>
        </div>
        <div className="flex items-center gap-2 cursor-pointer">
         <input

@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const ProductDetail = ({id, nombre, marca, precio, imagen, stock}) => {
   return (
-    <container className="flex items-center justify-between p-[200px]">
+    <container className="flex items-center justify-evenly mt-[150px]">
       <div>
-        <button className="mb-5 bg-[#fafafa] border border-[#1f1f1f] font-bold py-2 px-4 rounded-full">Volver</button>
-        <img src={imagen} alt={nombre} className='border shadow h-[600px] w-full'/>
+       <Link to='/'>
+       <button className="mb-5 bg-[#fafafa] border border-[#1f1f1f] font-bold py-2 px-4 rounded-full">Volver</button>
+        </Link>
+        <img src={imagen} alt={nombre} className='border shadow h-[500px] w-full'/>
       </div>
      <div className=" w-[50%] h-[35vh] p-4 flex flex-row flex-wrap justify-between items-start">
       <div>
