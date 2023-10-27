@@ -1,4 +1,6 @@
-# Primer Pre-Entrega REACT | Mateo Jimenez
+# Segunda Pre-Entrega REACT | Mateo Jimenez
 
-- Componente Navbar
-- Componente ListItemContainer con greeting
+- Implementacion de Hooks
+- Implementacion de Routing
+
+- Falta trabajar en fallas de frontend
