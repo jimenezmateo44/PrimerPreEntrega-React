@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import ProductDetailContainer from './components/ProductDetailContainer/ProductDetailContainer'
 import HomeContainer from './components/HomeContainer/HomeContainer'
-import ProductCategory from './components/ProductCard/ProductCategory'
 import { BrowserRouter, Router, Routes, Route} from 'react-router-dom'  
 
 const App = () => {
