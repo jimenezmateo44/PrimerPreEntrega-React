@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 const ImageSlider = () => {
     const imagenes = [
-      'https://i.postimg.cc/hthXFttC/be-creative.jpg',
         'https://www.ourdailydose.net/media/odd-images/NIKE_DUNK_LOW_lottery_green_banner.jpg',
         'https://www.ourdailydose.net/media/wysiwyg/WEB_1_1_.jpg',
         'https://www.ourdailydose.net/media/odd-images/web_banner_NIKE_DUNK_LOW_racer_blue.jpg',
@@ -22,10 +21,15 @@ const ImageSlider = () => {
       }, [indice]);
     
       return (
-        <div className="max-w[100vw] min-h-[350px] mx-auto object-cover mt-[110px]  ">
-          <img src={imagenes[indice]} alt={`Imagen ${indice + 1}`} className="w-full h-[450px] object-cover opacity-1 " />
-        </div>
-      );
+  <div className="w-full h-auto max-h-screen relative top-[5rem] ">
+    <img
+      src={imagenes[indice]}
+      alt={`Imagen ${indice + 1}`}
+      className="w-full max-h-[65vh] object-cover"
+    />
+  </div>
+);
+
 }
 
 export default ImageSlider
