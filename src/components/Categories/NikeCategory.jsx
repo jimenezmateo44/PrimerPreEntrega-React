@@ -13,8 +13,8 @@ const NikeCategory = () => {
 
 
   return (
-    <div className='mt-3 flex flex-col items-center justify-evenly flex-wrap gap-10 h-fit bg-[#f1f2f3] lg:h-screen'>
-      <h1 className='mt-[6rem] lg:hidden font-paytone font-bold text-2xl'>NIKE</h1>     
+    <div className='flex flex-row flex-wrap justify-evenly p-[2rem] mt-[5rem] gap-5 bg-[#F1F2F3] lg:p-[4rem]'>
+      <h1 className=' lg:hidden font-paytone font-bold text-2xl text-center block w-screen'>NIKE</h1>     
         {productos.map(producto => (
             <div key={producto.id}  className="p-4 bg-white">
               <Link to={`/producto/${producto.id}`}><img className='h-[300px] cursor-pointer'src={producto.imagen} alt={producto.nombre}/></Link>
