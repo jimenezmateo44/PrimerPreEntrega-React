@@ -13,7 +13,7 @@ const VansCategory = () => {
 
 
   return (
-    <div className='p-[5rem] flex items-center justify-evenly flex-wrap gap-10 h-fit bg-[#f1f2f3]'>   
+    <div className='mt-3 flex items-center justify-evenly flex-wrap gap-10 h-screen bg-[#f1f2f3]'>   
         {productos.map(producto => (
             <div key={producto.id}  className="p-4 bg-white">
               <Link to={`/producto/${producto.id}`}><img className='h-[300px] cursor-pointer'src={producto.imagen} alt={producto.nombre}/></Link>
