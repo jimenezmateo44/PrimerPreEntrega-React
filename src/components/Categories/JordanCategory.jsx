@@ -13,7 +13,8 @@ const JordanCategory = () => {
 
 
   return (
-    <div className='mt-3 flex items-center justify-evenly flex-wrap gap-10 h-screen bg-[#f1f2f3]'>   
+    <div className='mt-3 flex flex-col items-center justify-evenly flex-wrap gap-10 h-fit bg-[#f1f2f3] lg:h-screen'> 
+     <h1 className='mt-[6rem] lg:hidden font-paytone font-bold text-2xl'>JORDAN</h1>   
         {productos.map(producto => (
             <div key={producto.id}  className="p-4 bg-white">
               <Link to={`/producto/${producto.id}`}><img className='h-[300px] cursor-pointer'src={producto.imagen} alt={producto.nombre}/></Link>
