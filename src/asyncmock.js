@@ -16,3 +16,12 @@ export const getUnProducto = (id) => {
         }, 500)
     })
 }
+
+export const getProductoPorCategoria = (categoria) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const producto = productos.filter(producto => producto.marca === categoria);
+            resolve(producto);
+        }, 500)
+    })
+}

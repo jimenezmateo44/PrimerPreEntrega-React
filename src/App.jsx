@@ -3,6 +3,9 @@ import Navbar from './components/Navbar/Navbar'
 import ProductDetailContainer from './components/ProductDetailContainer/ProductDetailContainer'
 import HomeContainer from './components/HomeContainer/HomeContainer'
 import { BrowserRouter, Router, Routes, Route} from 'react-router-dom'  
+import NikeCategory from './components/Categories/NikeCategory'
+import JordanCategory from './components/Categories/JordanCategory'
+import VansCategory from './components/Categories/VansCategory'
 
 const App = () => {
   return (
@@ -11,7 +14,10 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path='/' element={<HomeContainer />} />
-            <Route path='/producto/:idProducto' element={<ProductDetailContainer />} />  
+            <Route path='/producto/:idProducto' element={<ProductDetailContainer />} /> 
+            <Route path='/categorias/nike' element={<NikeCategory />} /> 
+            <Route path='/categorias/jordan' element={<JordanCategory />} /> 
+            <Route path='/categorias/vans' element={<VansCategory />} /> 
           </Routes>
       </div> 
     </BrowserRouter>

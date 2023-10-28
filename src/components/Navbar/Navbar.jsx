@@ -26,7 +26,7 @@ const Navbar = () => {
       <nav className='font-sans bg-[#F8EFE0] w-full fixed top-0 left-0 z-10'>
         <div className='lg:flex items-center justify-between h-20 mx-auto p-4'>
           <div className="flex items-center w-100 min-[1024px]:w-[100vw] justify-between">
-             <div className="max-sm:block flex flex-shrink-0">
+             <div className="max-sm:block flex flex-shrink-0 mt-2">
                <Link to="/">
                  <img src={logo} alt="logo" className="h-8" />
                </Link>

@@ -95,4 +95,20 @@ export const productos = [
         imagen: 'https://www.thenorthstreet.in/cdn/shop/products/airjordan1retrohigh85.webp?v=1679397264&width=1780',
         stock: '2',
     },
+    {
+        id: '13',
+        nombre: 'Vans Old Skool Panther',
+        marca: 'Vans',
+        precio: '70000',
+        imagen: 'https://i.postimg.cc/7Z4x2rZp/vans1.jpg',
+        stock: '5',
+    },
+    {
+        id: '14',
+        nombre: 'Vans Old Skool Flame',
+        marca: 'Vans',
+        precio: '87000',
+        imagen: 'https://i.postimg.cc/7YMFjGqW/vans2.jpg',
+        stock: '5',
+    }
 ]
