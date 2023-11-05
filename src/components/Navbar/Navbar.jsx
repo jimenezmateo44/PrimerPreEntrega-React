@@ -40,7 +40,7 @@ const Navbar = () => {
               <button><SearchSVG /></button>
              </div>
              <div className='hidden lg:flex items-center gap-5'>
-              <Link to='/'><CartWidget /></Link>
+              <Link to='/carrito'><CartWidget /></Link>
               <Link to='/'><SignInSVG /></Link>
              </div>
              <div className="lg:hidden ml-4 cursor-pointer" onClick={toggleMenu}>
@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             <div className='flex flex-col gap-5 font-sans font-bold lg:hidden'>
               <Link to='/'>Ingresar</Link>
-              <Link to='/'>Carrito</Link>
+              <Link to='/carrito'>Carrito</Link>
               <div className="relative group">
                 <button
                   onClick={toggleDropdown}
