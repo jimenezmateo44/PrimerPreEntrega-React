@@ -1,37 +1,30 @@
-import {useState} from 'react'
-import { getProductos } from '../../asyncmock';
+import { useContext } from "react";
+import { CarritoContext } from "../../context/CarritoContext";
+import { Link } from "react-router-dom";
+import CarritoItem from "../CarritoItem/CarritoItem";
 
 const Carrito = () => {
-  return (
-   <container className='w-screen h-screen'>
-    <div className='mt-[100px] md:mt-[130px] sm:mt-[110px]'>
-        <h1 className='flex justify-center font-paytone text-[2rem]'>CARRITO</h1>
-        <div className='flex flex-row gap-3'>
-            <div>
-            <p>NOMBRE</p>
-            <p>Dunk Mocha Travis</p>
-            </div>
-            
-            <div>
-                <p>PRECIO</p>
-                <p>$320000</p>
-            </div>
-            
-            <div>
-                <p>CANTIDAD</p>
-                <p>1</p>
-            </div>
-            
-            <div>
-                <p>SUBTOTAL</p>
-                <p>$320000</p>
-            </div>
-            
-        </div>
-        
-    </div>
-   </container>
-  )
-}
+ const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
 
+    if (cantidadTotal === 0) {
+        return (
+            <>
+                <h2>No hay productos en el carrito. Compra o vete! </h2>
+                <Link to="/">Ver Productos</Link>
+            </>
+        )
+    }
+
+    return (
+        <div className="mt-[150px]">
+            {
+                carrito.map(producto => <CarritoItem key={producto.id} {...producto} />)
+            }
+            <h3>Total: ${total} </h3>
+            <h3>Cantidad Total: {cantidadTotal} </h3>
+            <button onClick={() => vaciarCarrito()} > Vaciar Carrito </button>
+            <Link to="/checkout">Finalizar Compra</Link>
+        </div>
+    )
+}
 export default Carrito

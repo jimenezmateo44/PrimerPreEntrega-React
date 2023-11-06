@@ -7,10 +7,12 @@ import NikeCategory from './components/Categories/NikeCategory'
 import JordanCategory from './components/Categories/JordanCategory'
 import VansCategory from './components/Categories/VansCategory'
 import Carrito from './components/Carrito/Carrito'
+import { CarritoProvider} from './context/CarritoContext';
 
 const App = () => {
   return (
     <BrowserRouter>
+     <CarritoProvider>
       <div className='w-full h-screen'>
           <Navbar />
           <Routes>
@@ -22,6 +24,7 @@ const App = () => {
             <Route path='/carrito' element={<Carrito />} />
           </Routes>
       </div> 
+      </CarritoProvider>
     </BrowserRouter>
   )
 }
