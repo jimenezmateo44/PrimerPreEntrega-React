@@ -8,22 +8,33 @@ const Carrito = () => {
 
     if (cantidadTotal === 0) {
         return (
-            <>
-                <h2>No hay productos en el carrito. Compra o vete! </h2>
-                <Link to="/">Ver Productos</Link>
-            </>
+            <div className="flex flex-col items-center justify-center gap-5 h-screen">
+                <h1 className="text-[1.5rem] font-paytone lg:text-[3rem]">No hay productos en el carrito :/</h1>
+                <Link to="/" className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit">Ver Productos</Link>
+            </div>
         )
     }
 
     return (
-        <div className="mt-[150px]">
-            {
+        <div className="flex flex-col items-center mt-[100px] lg:mt-[150px] h-screen">
+            <h1 className="flex items-center justify-center mb-[2rem] text-[3rem] font-antonio">CARRITO</h1>
+         <div className="border shadow">
+            <div className="border shadow w-fit p-3 max-h-[400px] overflow-auto">
+                 {
                 carrito.map(producto => <CarritoItem key={producto.id} {...producto} />)
             }
-            <h3>Total: ${total} </h3>
-            <h3>Cantidad Total: {cantidadTotal} </h3>
-            <button onClick={() => vaciarCarrito()} > Vaciar Carrito </button>
-            <Link to="/checkout">Finalizar Compra</Link>
+            </div>
+           
+            <div className="flex flex-col items-center mt-[50px]">
+                <h3 className="text-xl font-paytone">TOTAL: ${total} </h3>
+                <h3 className="text-xl font-paytone">CANT TOTAL: {cantidadTotal} </h3>
+                <div className="flex gap-5 justify-between m-5">
+                    <button onClick={() => vaciarCarrito()} className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit"> Vaciar Carrito </button>
+                    <Link to="/checkout" className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit" onClick={() => vaciarCarrito()}>Finalizar Compra</Link>
+                </div>  
+            </div>
+        </div>
+           
         </div>
     )
 }

@@ -25,8 +25,8 @@ const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
     //console.log("Productos agregados: " + cantidad);
 
     //Ahora acá yo puedo crear un objeto con el item y la cantidad: 
-    const item = {id, nombre, precio};
-    agregarAlCarrito(item, cantidad);
+    const item = {id, nombre, precio, imagen};
+    agregarAlCarrito(item, cantidad, imagen);
   }
 
   return (
