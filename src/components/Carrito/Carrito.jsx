@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { Link } from "react-router-dom";
 import CarritoItem from "../CarritoItem/CarritoItem";
+import { toast } from "react-toastify";
+
 
 const Carrito = () => {
  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
@@ -14,6 +16,9 @@ const Carrito = () => {
             </div>
         )
     }
+
+    const vaciarCarritoToast = () => toast.info("Carrito vacio!");
+
 
     return (
         <div className="flex flex-col items-center mt-[100px] lg:mt-[150px] h-screen">
@@ -29,7 +34,11 @@ const Carrito = () => {
                 <h3 className="text-xl font-paytone">TOTAL: ${total} </h3>
                 <h3 className="text-xl font-paytone">CANT TOTAL: {cantidadTotal} </h3>
                 <div className="flex gap-5 justify-between m-5">
-                    <button onClick={() => vaciarCarrito()} className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit"> Vaciar Carrito </button>
+                    <button onClick= {() => {
+                                   vaciarCarrito();
+                                   vaciarCarritoToast(); 
+                            }}
+                            className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit"> Vaciar Carrito </button>
                     <Link to="/checkout" className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit" onClick={() => vaciarCarrito()}>Finalizar Compra</Link>
                 </div>  
             </div>

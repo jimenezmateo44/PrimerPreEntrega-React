@@ -22,7 +22,6 @@ const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
 
   const cantidadHandler = (cantidad) => {
     setAgregarCantidad(cantidad);
-    //console.log("Productos agregados: " + cantidad);
 
     //Ahora acá yo puedo crear un objeto con el item y la cantidad: 
     const item = {id, nombre, precio, imagen};
@@ -46,7 +45,7 @@ const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           <h2 className="text-3xl font-semibold text-center lg:text-left mb-2">${precio}</h2>
           {
-        agregarCantidad > 0 ? (<Link to="/carrito" className='bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit'>Terminar Compra</Link>) : (<Contador inicial={1} stock={stock} funcionAgregar={cantidadHandler}/>)
+        agregarCantidad > 0 ? (<Link to="/carrito" className='bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit'>Ir al carrito</Link>) : (<Contador inicial={1} stock={stock} funcionAgregar={cantidadHandler}/>)
       }
 
         </div>
