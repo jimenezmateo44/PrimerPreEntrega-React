@@ -8,6 +8,7 @@ import JordanCategory from './components/Categories/JordanCategory'
 import VansCategory from './components/Categories/VansCategory'
 import Carrito from './components/Carrito/Carrito'
 import Checkout from './components/Checkout/Checkout'
+import Footer from './components/Footer/Footer'
 import { CarritoProvider} from './context/CarritoContext';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,6 +29,7 @@ const App = () => {
             <Route path='/checkout' element={<Checkout />} />
           </Routes>
           <ToastContainer />
+          <Footer />
       </div> 
       </CarritoProvider>
     </BrowserRouter>

@@ -14,7 +14,7 @@ const Checkout = () => {
     return (
         <div className='flex items-center justify-center h-screen'>
         <div className='flex flex-col items-center'>
-          <img src='https://miro.medium.com/v2/resize:fit:1400/0*ptDX0HfJCYpo9Pcs.gif' alt='success' className='h-[400px] bg-inherit' />
+          <img src='https://miro.medium.com/v2/resize:fit:1400/0*ptDX0HfJCYpo9Pcs.gif' alt='success' className='h-[200px] bg-inherit' />
           <h1 className='font-paytone text-[1.5rem]'>Espera un momento. Procesando tu compra...</h1>
         </div>
       </div>
