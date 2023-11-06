@@ -5,8 +5,8 @@ import WhatsApp from '../SVGIcons/Socials/WhatsApp'
 
 const Footer = () => {
   return (
-    <container className="h-fit w-screen lg:h-[400px]">
-        <div className='w-screen flex flex-col justify-evenly bg-[#1f1f1f] lg:flex-row'>
+    <container className="h-fit w-screen lg:h-[400px] ">
+        <div className='flex flex-col justify-evenly bg-[#1f1f1f] lg:flex-row'>
             <div className='flex flex-col items-center mt-[50px] gap-2'>
                 <h2 className='font-bold font-antonio text-white text-[1.5rem]'>Suscribite a nuestro NewsLetter</h2>
                 <div className='flex flex-row items-center gap-2'>
