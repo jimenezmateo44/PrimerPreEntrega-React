@@ -1,15 +1,27 @@
-import { useState } from 'react';
-import { getProductoPorCategoria } from '../../asyncmock';
+import { useState, useEffect } from 'react';
 import{ Link } from 'react-router-dom'
+
+import { db } from '../../services/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 const NikeCategory = () => {
     const [productos, setProductos] = useState([]);
 
-    const pedirDatos = async () => {
-        const categoria = await getProductoPorCategoria("Nike");
-        setProductos(categoria);
-    }
-    pedirDatos();
+    const idCategoria = "Nike";
+
+    useEffect( () => {
+      const misProductos = idCategoria ? query(collection(db, "inventario"), where("marca", "==", idCategoria)) : collection(db, "inventario");
+
+      getDocs(misProductos)
+        .then(res => {
+          const nuevosProductos = res.docs.map(doc => {
+            const data = doc.data()
+            return {id:doc.id, ...data}
+          })
+          setProductos(nuevosProductos);
+        })
+        .catch(error => console.log(error))
+    }, [idCategoria])
 
 
   return (

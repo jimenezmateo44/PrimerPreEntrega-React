@@ -1,16 +1,27 @@
-import { useState } from 'react';
-import { getProductoPorCategoria } from '../../asyncmock';
+import { useState, useEffect } from 'react';
 import{ Link } from 'react-router-dom'
+
+import { db } from '../../services/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 const JordanCategory = () => {
     const [productos, setProductos] = useState([]);
 
-    const pedirDatos = async () => {
-        const categoria = await getProductoPorCategoria("Jordan");
-        setProductos(categoria);
-    }
-    pedirDatos();
+    const idCategoria = "Jordan";
 
+    useEffect( () => {
+      const misProductos = idCategoria ? query(collection(db, "inventario"), where("marca", "==", idCategoria)) : collection(db, "inventario");
+
+      getDocs(misProductos)
+        .then(res => {
+          const nuevosProductos = res.docs.map(doc => {
+            const data = doc.data()
+            return {id:doc.id, ...data}
+          })
+          setProductos(nuevosProductos);
+        })
+        .catch(error => console.log(error))
+    }, [idCategoria])
 
   return (
     <div className='mt-3 flex flex-col items-center justify-evenly flex-wrap gap-10 h-fit bg-[#f1f2f3] lg:h-screen'> 

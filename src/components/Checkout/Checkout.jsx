@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { CarritoContext } from '../../context/CarritoContext';
+import { db } from '../../services/config';
+import { collection, addDoc } from 'firebase/firestore';
 
 const Checkout = () => {
-  const [isLoading, setIsLoading] = useState(true);
+    const [nombre, setNombre] = useState("");
+    const [apellido, setApellid] = useState("");
+    const [telefono, setTelefono] = useState("");
+    const [email, setEmail] = useState("");
+    const [emailConfirmation, setEmailConfirmation] = useState("");
+    const [error, setError] = useState("");
+    const [ordenId, setOrdenId] = useState("");
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000); // 2000 milisegundos (2 segundos)
-  }, []);
-
-  if (isLoading) {
-    return (
-        <div className='flex items-center justify-center h-screen'>
-        <div className='flex flex-col items-center'>
-          <img src='https://miro.medium.com/v2/resize:fit:1400/0*ptDX0HfJCYpo9Pcs.gif' alt='success' className='h-[200px] bg-inherit' />
-          <h1 className='font-paytone text-[1.5rem]'>Espera un momento. Procesando tu compra...</h1>
-        </div>
-      </div>
-    );
-  }
-
+    const [carrito, vaciarCarrito, total, totalCantidad] = useContext(CarritoContext); 
   return (
-    <div className='flex items-center justify-center h-screen'>
-      <div className='flex flex-col items-center gap-5'>
-        <img src='https://assets-v2.lottiefiles.com/a/71ac41e2-1162-11ee-be2b-8f2f0c77c8e9/LRcSqC0pln.gif' alt='success' className='h-[250px] bg-inherit' />
-        <h1 className='font-paytone text-[1.5rem]'>Compra realizada con éxito!</h1>
-        <Link to='/' className='bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit'>Volver a inicio</Link>
+    <div className='flex h-screen'>
+      <div className='w-screen'>
+        <h1 className='mt-[100px] flex items-center justify-center font-paytone text-2xl'>Detalles de tu orden</h1>
+
+       <form>
+         {
+            carrito.map(producto => (
+              <div key={producto.item.id}>
+                <p> {producto.item.nombre} x {producto.cantidad}</p>
+                <p>{producto.item.precio}</p>
+                <hr/>
+              </div>
+            ))
+          }
+       </form>
+
+
       </div>
     </div>
-  );
+  )
 }
 
-export default Checkout;
+export default Checkout

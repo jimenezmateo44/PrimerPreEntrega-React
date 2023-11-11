@@ -1,15 +1,19 @@
-import { useState } from 'react';
-import { getProductos } from '../../asyncmock';
+import { useState, useEffect } from 'react';
 import{ Link } from 'react-router-dom'
+import { db } from '../../services/config';
+import { collection, getDocs, query } from 'firebase/firestore';
 
 const ProductCard = () => {
     const [productos, setProductos] = useState([]);
 
-    const pedirDatos = async () => {
-        const inventario = await getProductos();
-        setProductos(inventario);
-    }
-    pedirDatos();
+    useEffect(() => {
+        const misProductos = query(collection(db, "inventario"));
+        getDocs(misProductos)
+            .then(respuesta => {
+                setProductos(respuesta.docs.map((doc) => ({id:doc.id, ...doc.data()})));
+            })
+            .catch(error => console.log(error))
+    }, [productos])
 
 
   return (
