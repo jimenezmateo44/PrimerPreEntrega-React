@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 const CheckoutSuccess = () => {
   const [isLoading, setIsLoading] = useState(true);
 
+  const makeRandomId= (length) => {
+      let result = ''
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+      for (let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+     }
+     return result;
+  }
+
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -26,8 +36,10 @@ const CheckoutSuccess = () => {
       <div className='flex flex-col items-center gap-5'>
         <img src='https://assets-v2.lottiefiles.com/a/71ac41e2-1162-11ee-be2b-8f2f0c77c8e9/LRcSqC0pln.gif' alt='success' className='h-[250px] bg-inherit' />
         <h1 className='font-paytone text-[1.5rem]'>Compra realizada con éxito!</h1>
+        <strong className='p-5 text-justify'>Gracias por tu compra! Tu número de orden es: {makeRandomId(15)}</strong>
         <Link to='/' className='bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit'>Volver a inicio</Link>
       </div>
+      
     </div>
   );
 }

@@ -39,7 +39,7 @@ const Carrito = () => {
                                    vaciarCarritoToast(); 
                             }}
                             className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit"> Vaciar Carrito </button>
-                    <Link to="/checkout" className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit" onClick={() => vaciarCarrito()}>Finalizar Compra</Link>
+                    <Link to="/checkout" className="bg-[#1f1f1f] text-white font-bold py-2 px-4 rounded-full lg:ml-2 mt-2 lg:mt-0 w-fit">Finalizar Compra</Link>
                 </div>  
             </div>
         </div>

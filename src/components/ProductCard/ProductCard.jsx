@@ -13,7 +13,7 @@ const ProductCard = () => {
                 setProductos(respuesta.docs.map((doc) => ({id:doc.id, ...doc.data()})));
             })
             .catch(error => console.log(error))
-    }, [productos])
+    }, [])
 
 
   return (

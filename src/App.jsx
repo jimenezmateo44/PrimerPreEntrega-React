@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer'
 import { CarritoProvider} from './context/CarritoContext';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import CheckoutSuccess from './components/Checkout/CheckoutSuccess'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
             <Route path='/categorias/vans' element={<VansCategory />} /> 
             <Route path='/carrito' element={<Carrito />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/checkout-success' element={<CheckoutSuccess />} />
           </Routes>
           <ToastContainer />
           <Footer />
