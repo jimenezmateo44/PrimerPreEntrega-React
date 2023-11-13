@@ -7,23 +7,15 @@ import { CarritoContext } from '../../context/CarritoContext';
 import { useContext } from 'react';
 
 
-const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
+const ProductDetail = ({ id, nombre, marca, precio, imagen, stock, descripcion }) => {
   
-   //Creamos un estado local con la cantidad de productos agregados. 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-  ///////////////////////Agregado Clase 6
-
   const {agregarAlCarrito} = useContext(CarritoContext);
-
-  ///////////////////////////////////////
-
-  //Creamos una función manejadora de la cantidad: 
 
   const cantidadHandler = (cantidad) => {
     setAgregarCantidad(cantidad);
 
-    //Ahora acá yo puedo crear un objeto con el item y la cantidad: 
     const item = {id, nombre, precio, imagen};
     agregarAlCarrito(item, cantidad, imagen);
   }
@@ -38,7 +30,7 @@ const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
         </Link>
         <img src={imagen} alt={nombre} className="border shadow-lg max-h-[500px] w-full object-cover" />
       </div>
-      <div className="w-full lg:w-1/2 p-4 mt-[4.5rem]">
+      <div className="w-full lg:w-1/2 p-4 lg:mt-[7rem]">
         <h1 className="text-2xl font-semibold text-center lg:text-left mb-2">{nombre}</h1>
         <h2 className="mb-2">Marca: {marca}</h2>
         <p className="mb-4">Quedan {stock} unidades</p>
@@ -50,7 +42,7 @@ const ProductDetail = ({ id, nombre, marca, precio, imagen, stock }) => {
 
         </div>
         <hr className="my-4" />
-        <p>Descripcion: Lorem ipsum dolor sit amet consectetur adipisicing elit. At obcaecati nam, ratione voluptatem doloribus expedita. Deserunt quos, iure similique nesciunt eligendi sint placeat pariatur dicta, laudantium necessitatibus ducimus unde earum.</p>
+        <p className='text-justify'><strong>Descripcion:</strong> {descripcion}</p>
       </div>
 
        

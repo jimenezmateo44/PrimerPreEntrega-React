@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app"; //Inicia la conexion con Firebase 
 import { getFirestore } from 'firebase/firestore'; //Obtenemos una instancia de Firestore
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDdWUPpiIpcxnTBS2uwItcy7GDuzLDiI00",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "unveil-conceptstore.firebaseapp.com",
   projectId: "unveil-conceptstore",
   storageBucket: "unveil-conceptstore.appspot.com",

@@ -8,7 +8,7 @@ const CarritoItem = ({item, cantidad}) => {
 
   return (
     <div className="flex items-center justify-center mt-5 shadow">
-        <div className="flex flex-row items-center gap-5 font-sans font-bold text-[1rem] p-3">
+        <div className="flex flex-row items-center gap-5 font-antonio font-bold text-[1rem] p-3">
           <Link to={`/producto/${item.id}`}>
             <img src={item.imagen} alt={item.nombre} className="h-[75px] lg:h-[100px]" key={item.id}/>  
           </Link> 

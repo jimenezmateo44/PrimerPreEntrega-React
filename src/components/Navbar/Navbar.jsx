@@ -57,7 +57,7 @@ const Navbar = () => {
               <div className="relative group">
                 <button
                   onClick={toggleDropdown}
-                  className=" hover:text-gray-900 group-hover:text-gray-900"
+                  className=" hover:text-gray-900 group-hover:text-gray-900 mb-3"
                 >
                   Categorías
                 </button>
@@ -75,12 +75,7 @@ const Navbar = () => {
                   </ul>
                 )}
               </div>
-            </div>
-
-            <div className='flex flex-row gap-2 mb-3 lg:hidden'>
-             <Busqueda />
-            </div>
-            
+            </div>            
           </div>     
       </nav>
   );
