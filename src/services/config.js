@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase/firestore'; //Obtenemos una instancia de 
 
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "process.env.REACT_APP_FIREBASE_API_KEY",
   authDomain: "unveil-conceptstore.firebaseapp.com",
   projectId: "unveil-conceptstore",
   storageBucket: "unveil-conceptstore.appspot.com",
